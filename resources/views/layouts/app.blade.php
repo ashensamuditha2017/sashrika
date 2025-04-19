@@ -13,10 +13,9 @@
         @yield('content')
     </div>
 
-    @if (Route::currentRouteName() !== 'login')
+    @if (Route::currentRouteName() !== 'login' && Route::currentRouteName() !== 'register')
         <x-bottom-nav />
     @endif
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -10,6 +10,10 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
 // Optional POST route (if you have a login controller)
 // Route::post('/login', [YourLoginController::class, 'login'])->name('login.submit');
 

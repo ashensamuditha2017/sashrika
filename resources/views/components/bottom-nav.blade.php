@@ -1,120 +1,116 @@
 <style>
     .bottom-nav {
         position: fixed;
-        bottom: 0;
-        width: 100%;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: #2b8a3e;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px 0;
-        border-radius: 20px 20px 0 0;
-        color: white;
+        padding: 5px 5px;
+        width: 95%;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
         font-family: sans-serif;
     }
 
     .nav-item {
-        text-align: center;
-        color: white;
         flex: 1;
+        text-align: center;
+    }
+
+    .nav-item a,
+    .center-shape a {
+        color: white;
+        text-decoration: none;
         font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav-item i {
-        display: block;
-        font-size: 20px;
-        margin-bottom: 4px;
-    }
-
-    .nav-item a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .nav-item a.active {
-        color: #ffd700; /* Active color for text */
-    }
-
-    .nav-item a.active i {
-        color: #ffd700; /* Active color for icon */
+        font-size: 22px;
+        margin-bottom: 5px;
     }
 
     .center-icon {
         position: relative;
-        top: -20px;
-        z-index: 1;
-        flex: 1;
-        text-align: center;
+        top: -30px;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
     }
 
     .center-shape {
         background-color: #2b8a3e;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 15px;
-        display: inline-block;
-        width: 60px;
-        height: 60px;
+        border: 4px solid white;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        border: 2px solid white;
-    }
-
-    .center-shape a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .center-shape a.active {
-        color: #ffd700; /* Active color for text */
-    }
-
-    .center-shape a.active i {
-        color: #ffd700; /* Active color for icon */
+        justify-content: center;
     }
 
     .center-shape i {
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .center-shape div {
-        font-size: 12px;
+        font-size: 13px;
+        margin-top: 2px;
     }
+
+    a.active, .center-shape a.active {
+        color: #ffd700;
+    }
+
+    a.active i, .center-shape a.active i {
+        color: #ffd700;
+    }
+
 </style>
 
 <div class="bottom-nav">
     <div class="nav-item">
         <a href="{{ route('predictions.index') }}" class="{{ request()->routeIs('predictions.index') ? 'active' : '' }}">
-            <i class="material-icons">insights</i>
+            <i class="material-icons-outlined">insights</i>
             <div>Predictions</div>
         </a>
     </div>
     <div class="nav-item">
         <a href="{{ route('user.profile') }}" class="{{ request()->routeIs('user.profile') ? 'active' : '' }}">
-            <i class="material-icons">person</i>
+            <i class="material-icons-outlined">person_outline</i>
             <div>User</div>
         </a>
     </div>
-    <div class="nav-item center-icon">
-        <a href="{{ route('data.index') }}" class="{{ request()->routeIs('data.index') ? 'active' : '' }}">
-            <div class="center-shape">
-                <i class="material-icons">bar_chart</i>
+    <div class="center-icon">
+        <div class="center-shape">
+            <a href="{{ route('data.index') }}" class="{{ request()->routeIs('data.index') ? 'active' : '' }}">
+                <i class="material-icons-outlined">bar_chart</i>
                 <div>Data</div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
     <div class="nav-item">
         <a href="{{ route('reports.index') }}" class="{{ request()->routeIs('reports.index') ? 'active' : '' }}">
-            <i class="material-icons">description</i>
+            <i class="material-icons-outlined">description</i>
             <div>Reports</div>
         </a>
     </div>
     <div class="nav-item">
         <a href="{{ route('settings.index') }}" class="{{ request()->routeIs('settings.index') ? 'active' : '' }}">
-            <i class="material-icons">settings</i>
+            <i class="material-icons-outlined">settings</i>
             <div>Settings</div>
         </a>
     </div>
 </div>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
