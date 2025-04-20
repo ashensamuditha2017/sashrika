@@ -21,9 +21,9 @@ Route::get('/predictions', function () {
     return view('predictions'); // Create a predictions.blade.php view
 })->name('predictions.index');
 
-// Route::get('/user/profile', function () {
-//     return view('user.profile'); // Create a user/profile.blade.php view
-// })->name('user.profile');
+Route::get('/messages', function () {
+    return view('officer.messages'); // Create a user/profile.blade.php view
+})->name('messages.index');
 
 Route::get('/home', function () {
     return view('officer.home'); // Create a data.blade.php view

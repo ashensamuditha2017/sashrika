@@ -1,8 +1,6 @@
 @extends('layouts.app', ['elementActive' => 'report'])
 
 @section('content')
-
-@section('content')
     <div class="col-md 12">
         <div class="text-center mb-4">
             <img src="{{ asset('static/img/Sassrika-Prject-Logo.png') }}" alt="Logo" class="img-fluid" style="max-width: 200px;">

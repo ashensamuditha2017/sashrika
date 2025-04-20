@@ -1,7 +1,7 @@
 <style>
     .bottom-nav {
         position: fixed;
-        bottom: 20px;
+        bottom: 0px;
         left: 50%;
         transform: translateX(-50%);
         background-color: #2b8a3e;
@@ -100,7 +100,7 @@
         </div>
     </div>
     <div class="nav-item">
-        <a href="{{ route('reports.index') }}" class="{{ request()->routeIs('reports.index') ? 'active' : '' }}">
+        <a href="{{ route('messages.index') }}" class="{{ request()->routeIs('messages.index') ? 'active' : '' }}">
             <i class="material-icons-outlined">mail</i>
             <div>Messages</div>
         </a>
