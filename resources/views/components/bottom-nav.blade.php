@@ -106,9 +106,9 @@
         </a>
     </div>
     <div class="nav-item">
-        <a href="{{ route('settings.index') }}" class="{{ request()->routeIs('settings.index') ? 'active' : '' }}">
-            <i class="material-icons-outlined">settings</i>
-            <div>Settings</div>
+        <a href="{{ route('notifications.index') }}" class="{{ request()->routeIs('notifications.index') ? 'active' : '' }}">
+            <i class="material-icons-outlined">notifications</i>
+            <div>Notify</div>
         </a>
     </div>
 </div>
