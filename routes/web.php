@@ -18,7 +18,7 @@ Route::get('/register', function () {
 // Route::post('/login', [YourLoginController::class, 'login'])->name('login.submit');
 
 Route::get('/predictions', function () {
-    return view('predictions'); // Create a predictions.blade.php view
+    return view('officer.predictions'); // Create a predictions.blade.php view
 })->name('predictions.index');
 
 Route::get('/messages', function () {
