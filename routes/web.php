@@ -21,16 +21,16 @@ Route::get('/predictions', function () {
     return view('predictions'); // Create a predictions.blade.php view
 })->name('predictions.index');
 
-Route::get('/user/profile', function () {
-    return view('user.profile'); // Create a user/profile.blade.php view
-})->name('user.profile');
+// Route::get('/user/profile', function () {
+//     return view('user.profile'); // Create a user/profile.blade.php view
+// })->name('user.profile');
 
-Route::get('/data', function () {
-    return view('officer.data'); // Create a data.blade.php view
-})->name('data.index');
+Route::get('/home', function () {
+    return view('officer.home'); // Create a data.blade.php view
+})->name('home.index');
 
-Route::get('/reports', function () {
-    return view('reports'); // Create a reports.blade.php view
+Route::get('/report', function () {
+    return view('officer.damage-report'); // Create a reports.blade.php view
 })->name('reports.index');
 
 Route::get('/settings', function () {

@@ -1,5 +1,5 @@
 {{-- @extends('layouts.app') --}}
-@extends('layouts.app', ['elementActive' => 'data'])
+@extends('layouts.app', ['elementActive' => 'home'])
 
 @section('content')
 <div class="container mt-4">
