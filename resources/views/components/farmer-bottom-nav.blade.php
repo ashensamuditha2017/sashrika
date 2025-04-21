@@ -93,7 +93,7 @@
     </div>
     <div class="center-icon">
         <div class="center-shape">
-            <a href="{{ route('home.index') }}" class="{{ request()->routeIs('home.index') ? 'active' : '' }}">
+            <a href="{{ route('farmer.home') }}" class="{{ request()->routeIs('farmer.home') ? 'active' : '' }}">
                 <i class="material-icons-outlined">home</i>
                 <div>Home</div>
             </a>

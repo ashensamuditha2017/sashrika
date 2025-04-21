@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OfficerController;
+use App\Http\Controllers\FarmerController;
 
 // Routes accessible without authentication
 Route::get('/', function () {
@@ -23,5 +24,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reports', [OfficerController::class, 'report'])->name('reports.index');
         Route::get('/messages', [OfficerController::class, 'messages'])->name('messages.index');
         Route::get('/notifications', [OfficerController::class, 'alerts'])->name('notifications.index');
+    });
+
+    // Farmer Routes
+    Route::prefix('farmer')->group(function () {
+        Route::get('/home', [FarmerController::class, 'index'])->name('farmer.home');
+        Route::get('/predictions', [FarmerController::class, 'predictions'])->name('farmer.predictions');
+        Route::get('/reports', [FarmerController::class, 'reports'])->name('farmer.reports');
+        Route::get('/messages', [FarmerController::class, 'messages'])->name('farmer.messages');
+        Route::get('/notifications', [FarmerController::class, 'notifications'])->name('farmer.notifications');
     });
 });

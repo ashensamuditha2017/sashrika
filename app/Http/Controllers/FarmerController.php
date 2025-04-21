@@ -12,14 +12,12 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        //  Access the logged-in farmer's data if needed:
-        $farmer = Auth::user(); 
-        return view('farmer.home', compact('farmer')); // Ensure farmer.home view exists
+        $farmer = Auth::user();
+        return view('farmer.home', compact('farmer'));
     }
 
     public function predictions()
     {
-        $farmer = Auth::user();
         $farmer = Auth::user();
         return view('farmer.predictions', compact('farmer'));
     }
