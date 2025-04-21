@@ -1,38 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OfficerController;
 
+// Routes accessible without authentication
 Route::get('/', function () {
     return view('welcome');
+})->name('welcome');
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+// All other routes require authentication
+Route::middleware(['auth'])->group(function () {
+    // Officer Routes
+    Route::prefix('officer')->group(function () {
+        Route::get('/home', [OfficerController::class, 'index'])->name('home.index');
+        Route::get('/predictions', [OfficerController::class, 'predictions'])->name('predictions.index');
+        Route::get('/reports', [OfficerController::class, 'report'])->name('reports.index');
+        Route::get('/messages', [OfficerController::class, 'messages'])->name('messages.index');
+        Route::get('/notifications', [OfficerController::class, 'alerts'])->name('notifications.index');
+    });
 });
-
-Route::get('/officer/login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
-// Optional POST route (if you have a login controller)
-// Route::post('/login', [YourLoginController::class, 'login'])->name('login.submit');
-
-Route::get('/officer/predictions', function () {
-    return view('officer.predictions'); // Create a predictions.blade.php view
-})->name('predictions.index');
-
-Route::get('/officer/messages', function () {
-    return view('officer.messages'); // Create a user/profile.blade.php view
-})->name('messages.index');
-
-Route::get('/officer/home', function () {
-    return view('officer.home'); // Create a data.blade.php view
-})->name('home.index');
-
-Route::get('/officer/report', function () {
-    return view('officer.damage-report'); // Create a reports.blade.php view
-})->name('reports.index');
-
-Route::get('/officer/notifications', function () {
-    return view('officer.notifications'); // Create a settings.blade.php view
-})->name('notifications.index');

@@ -11,22 +11,25 @@
                 </div>
             </div>
 
-            <div class="mb-4 mt-4">
-                <input type="text" class="form-control form-control-lg" placeholder="Username">
-            </div>
-            <div class="mb-3">
-                <input type="password" class="form-control form-control-lg" placeholder="Password">
-            </div>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="mb-4 mt-4">
+                    <input type="email" class="form-control form-control-lg" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
+                </div>
 
-            <div class="d-flex justify-content-end mb-4">
-                <a href="#" class="text-decoration-none text-dark d-flex align-items-center small">
-                    <i class="material-icons" style="font-size: 21px; margin-right: 5px;">help_outline</i> Forgot Password
-                </a>
-            </div>
+                <div class="d-flex justify-content-end mb-4">
+                    <a href="#" class="text-decoration-none text-dark d-flex align-items-center small">
+                        <i class="material-icons" style="font-size: 21px; margin-right: 5px;">help_outline</i> Forgot Password
+                    </a>
+                </div>
 
-            <div class="text-center mt-5">
-                <button type="submit" class="btn btn-success btn-lg px-5">Login</button>
-            </div>
+                <div class="text-center mt-5">
+                    <button type="submit" class="btn btn-success btn-lg px-5">Login</button>
+                </div>
+            </form>
 
             <div class="mt-4">
                 {{-- <img src="{{ asset('images/your-background.png') }}" alt="Background" class="img-fluid"> --}}

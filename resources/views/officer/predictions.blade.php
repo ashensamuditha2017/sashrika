@@ -1,4 +1,4 @@
-@extends('layouts.app', ['elementActive' => 'messages'])
+@extends('layouts.app', ['elementActive' => 'predictions'])
 
 @section('content')
     <div class="container"><div class="container mt-3">
