@@ -80,7 +80,7 @@
 
 <div class="bottom-nav">
     <div class="nav-item">
-        <a href="{{ route('predictions.index') }}" class="{{ request()->routeIs('predictions.index') ? 'active' : '' }}">
+        <a href="{{ route('farmer.predictions') }}" class="{{ request()->routeIs('farmer.predictions') ? 'active' : '' }}">
             <i class="material-icons-outlined">show_chart</i>
             <div>Predictions</div>
         </a>
