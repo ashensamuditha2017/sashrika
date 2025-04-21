@@ -86,7 +86,7 @@
         </a>
     </div>
     <div class="nav-item">
-        <a href="{{ route('reports.index') }}" class="{{ request()->routeIs('reports.index') ? 'active' : '' }}">
+        <a href="{{ route('farmer.reports') }}" class="{{ request()->routeIs('farmer.reports') ? 'active' : '' }}">
             <i class="material-icons-outlined">warning</i>
             <div>Report</div>
         </a>

@@ -25,7 +25,7 @@ class FarmerController extends Controller
     public function reports()
     {
         $farmer = Auth::user();
-        return view('farmer.reports', compact('farmer'));
+        return view('farmer.damage-report', compact('farmer'));
     }
 
     public function messages()
