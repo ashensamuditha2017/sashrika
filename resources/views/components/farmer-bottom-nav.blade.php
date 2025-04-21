@@ -100,7 +100,7 @@
         </div>
     </div>
     <div class="nav-item">
-        <a href="{{ route('messages.index') }}" class="{{ request()->routeIs('messages.index') ? 'active' : '' }}">
+        <a href="{{ route('farmer.messages') }}" class="{{ request()->routeIs('farmer.messages') ? 'active' : '' }}">
             <i class="material-icons-outlined">mail</i>
             <div>Messages</div>
         </a>
