@@ -34,9 +34,9 @@ class FarmerController extends Controller
         return view('farmer.messages', compact('farmer'));
     }
 
-    public function notifications()
+    public function tips()
     {
         $farmer = Auth::user();
-        return view('farmer.notifications', compact('farmer'));
+        return view('farmer.tips', compact('farmer'));
     }
 }

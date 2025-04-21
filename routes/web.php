@@ -32,6 +32,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/predictions', [FarmerController::class, 'predictions'])->name('farmer.predictions');
         Route::get('/reports', [FarmerController::class, 'reports'])->name('farmer.reports');
         Route::get('/messages', [FarmerController::class, 'messages'])->name('farmer.messages');
-        Route::get('/notifications', [FarmerController::class, 'notifications'])->name('farmer.notifications');
+        Route::get('/tips', [FarmerController::class, 'tips'])->name('farmer.tips');
     });
 });
