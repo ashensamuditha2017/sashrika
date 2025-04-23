@@ -21,6 +21,17 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
+// Admin Dashboard Routes - Accessible without authentication
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/officers', [OfficerManagementController::class, 'index'])->name('students.index'); // "All Officers"
+    Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('courses.index');   // "All Farmers"
+    Route::get('/production', [ProductionController::class, 'index'])->name('registeredStudents.show'); // "Production"
+    Route::get('/damages/create', [DamageReportController::class, 'create'])->name('students.create'); // "Damages" (assuming a create form)
+    // Route::get('/registered-students', [RegisteredStudentsController::class, 'index'])->name('registeredStudents.index');
+    Route::get('/users', [UserController::class, 'index'])->name('profile.index');         // "Users"
+});
+
 // All other routes require authentication
 Route::middleware(['auth'])->group(function () {
     // Officer Routes
@@ -39,16 +50,5 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reports', [FarmerController::class, 'reports'])->name('farmer.reports');
         Route::get('/messages', [FarmerController::class, 'messages'])->name('farmer.messages');
         Route::get('/tips', [FarmerController::class, 'tips'])->name('farmer.tips');
-    });
-
-    // Admin Dashboard Routes (assuming only admins can access these)
-    Route::middleware(['admin'])->prefix('admin')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/officers', [OfficerManagementController::class, 'index'])->name('students.index'); // "All Officers"
-        Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('courses.index');   // "All Farmers"
-        Route::get('/production', [ProductionController::class, 'index'])->name('registeredStudents.show'); // "Production"
-        Route::get('/damages/create', [DamageReportController::class, 'create'])->name('students.create'); // "Damages" (assuming a create form)
-        // Route::get('/registered-students', [RegisteredStudentsController::class, 'index'])->name('registeredStudents.index');
-        Route::get('/users', [UserController::class, 'index'])->name('profile.index');         // "Users"
     });
 });

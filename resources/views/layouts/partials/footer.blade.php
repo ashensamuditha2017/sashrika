@@ -2,7 +2,7 @@
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Zana Student Management System {{ date("Y") }}</span>
+            <span>Copyright &copy; සශ්‍රීක | Sashrika - Agriculture Management System {{ date("Y") }}</span>
         </div>
     </div>
 </footer>
