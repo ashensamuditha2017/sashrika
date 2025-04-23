@@ -18,8 +18,8 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item {{ ($elementActive ?? '') == 'allStudents' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('students.index') }}">
+    <li class="nav-item {{ ($elementActive ?? '') == 'allOfficers' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('dashboard.officers') }}">
             <span>All Officers</span></a>
     </li>
 

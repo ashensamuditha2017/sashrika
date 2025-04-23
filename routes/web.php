@@ -24,7 +24,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 // Admin Dashboard Routes - Accessible without authentication
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/officers', [OfficerManagementController::class, 'index'])->name('students.index'); // "All Officers"
+    Route::get('/officers', [OfficerManagementController::class, 'index'])->name('dashboard.officers'); // "All Officers"
     Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('courses.index');   // "All Farmers"
     Route::get('/production', [ProductionController::class, 'index'])->name('registeredStudents.show'); // "Production"
     Route::get('/damages/create', [DamageReportController::class, 'create'])->name('students.create'); // "Damages" (assuming a create form)
