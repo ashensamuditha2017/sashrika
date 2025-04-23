@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\FarmerController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OfficerManagementController;
+use App\Http\Controllers\Admin\FarmerManagementController;
+use App\Http\Controllers\Admin\ProductionController;
+use App\Http\Controllers\Admin\DamageReportController;
+use App\Http\Controllers\Admin\UserController; // For the "Users" link
 
 // Routes accessible without authentication
 Route::get('/', function () {
@@ -33,5 +39,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/reports', [FarmerController::class, 'reports'])->name('farmer.reports');
         Route::get('/messages', [FarmerController::class, 'messages'])->name('farmer.messages');
         Route::get('/tips', [FarmerController::class, 'tips'])->name('farmer.tips');
+    });
+
+    // Admin Dashboard Routes (assuming only admins can access these)
+    Route::middleware(['admin'])->prefix('admin')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/officers', [OfficerManagementController::class, 'index'])->name('students.index'); // "All Officers"
+        Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('courses.index');   // "All Farmers"
+        Route::get('/production', [ProductionController::class, 'index'])->name('registeredStudents.show'); // "Production"
+        Route::get('/damages/create', [DamageReportController::class, 'create'])->name('students.create'); // "Damages" (assuming a create form)
+        // Route::get('/registered-students', [RegisteredStudentsController::class, 'index'])->name('registeredStudents.index');
+        Route::get('/users', [UserController::class, 'index'])->name('profile.index');         // "Users"
     });
 });

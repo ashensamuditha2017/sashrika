@@ -3,7 +3,7 @@
 @section('content')
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-8 col-lg-12">
             <div class="text-center mb-4">
                 <img src="{{ asset('static/img/Sassrika-Prject-Logo.png') }}" alt="Logo" class="img-fluid" style="max-width: 200px;">
                 <div class="mt-4" style="font-size: 1.2em;">

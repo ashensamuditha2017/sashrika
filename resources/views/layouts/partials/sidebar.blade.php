@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-graduation-cap"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">ZANA</div>
+        <div class="sidebar-brand-text mx-3">සශ්‍රීක</div>
     </a>
 
     <!-- Divider -->
@@ -20,28 +20,28 @@
 
     <li class="nav-item {{ ($elementActive ?? '') == 'allStudents' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('students.index') }}">
-            <span>All Students</span></a>
+            <span>All Officers</span></a>
     </li>
 
     <li class="nav-item {{ ($elementActive ?? '') == 'availableCourses' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('courses.index') }}">
-            <span>Available Courses</span></a>
+            <span>All Farmers</span></a>
     </li>
 
     <li class="nav-item {{ ($elementActive ?? '') == 'allStudentEnrollments' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('registeredStudents.show') }}">
-            <span>All Student Enrollments</span></a>
+            <span>Production</span></a>
     </li>
 
     <li class="nav-item {{ ($elementActive ?? '') == 'entranceExamRegistration' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('students.create') }}">
-            <span>Entrance Exam Registration</span></a>
+            <span>Damages</span></a>
     </li>
 
-    <li class="nav-item {{ ($elementActive ?? '') == 'registeredStudents' ? 'active' : '' }}">
+    {{-- <li class="nav-item {{ ($elementActive ?? '') == 'registeredStudents' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('registeredStudents.index') }}">
             <span>Registered Students</span></a>
-    </li>
+    </li> --}}
 
     <li class="nav-item {{ ($elementActive ?? '') == 'users' ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('profile.index') }}">
