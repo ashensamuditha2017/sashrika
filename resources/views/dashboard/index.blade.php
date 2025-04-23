@@ -86,7 +86,8 @@
     <div class="row">
 
         <div class="col-xl-8 col-lg-7">
-            <div class="card shadow mb-4">
+            <h6 class="m-0 font-weight-bold text-primary">Total Production</h6>
+            {{-- <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                     <div class="dropdown no-arrow">
@@ -104,18 +105,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <canvas id="myAreaChart"></canvas>
-                    </div>
+            </div> --}}
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
                 </div>
+                {{-- <hr>
+                Styling for the area chart can be found in the
+                <code>/js/static/chart-area-demo.js</code> file. --}}
             </div>
         </div>
 
         <div class="col-xl-4 col-lg-5">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Production By District</h6>
                     {{-- <div class="dropdown no-arrow">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -130,16 +134,16 @@
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </div> --}}
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <canvas id="myAreaChart"></canvas>
-                        </div>
-                        <hr>
-                        Styling for the area chart can be found in the
-                        <code>/js/static/chart-area-demo.js</code> file.
-                    </div>
                 </div>
                 <div class="card-body">
+                    <div class="chart-pie pt-4">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    {{-- <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div> --}}
+                {{-- <div class="card-body">
                     <div class="chart-pie pt-4 pb-2">
                         <canvas id="myPieChart"></canvas>
                     </div>
@@ -154,15 +158,15 @@
                             <i class="fas fa-circle text-info"></i> Referral
                         </span>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 @endsection
 
 @section('scripts-bottom')
-    {{-- <script src="{{ asset('static/vendor/chart.js/Chart.min.js') }}"></script> --}}
-    <script src="{{ asset('js/static/Chart.min.js') }}"></script>
-    <script src="{{ asset('js/static/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('static/js/Chart.min.js') }}"></script>
+    <script src="{{ asset('static/js/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('static/js/chart-pie-demo.js') }}"></script>
     {{-- <script src="{{ asset('static/js/demo/chart-pie-demo.js') }}"></script> --}}
 @endsection
