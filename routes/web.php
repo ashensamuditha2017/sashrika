@@ -25,7 +25,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/officers', [OfficerManagementController::class, 'index'])->name('dashboard.officers'); // "All Officers"
-    Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('courses.index');   // "All Farmers"
+    Route::get('/farmers', [FarmerManagementController::class, 'index'])->name('dashboard.farmers');   // "All Farmers"
     Route::get('/production', [ProductionController::class, 'index'])->name('registeredStudents.show'); // "Production"
     Route::get('/damages/create', [DamageReportController::class, 'create'])->name('students.create'); // "Damages" (assuming a create form)
     // Route::get('/registered-students', [RegisteredStudentsController::class, 'index'])->name('registeredStudents.index');

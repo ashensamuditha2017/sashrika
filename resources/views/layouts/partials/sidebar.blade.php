@@ -23,8 +23,8 @@
             <span>All Officers</span></a>
     </li>
 
-    <li class="nav-item {{ ($elementActive ?? '') == 'availableCourses' ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('courses.index') }}">
+    <li class="nav-item {{ ($elementActive ?? '') == 'allFarmers' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('dashboard.farmers') }}">
             <span>All Farmers</span></a>
     </li>
 
